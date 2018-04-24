@@ -1,0 +1,32 @@
+/**index.wxss**/
+.container {
+  width: 100%;
+  height: 100%;
+}
+.calc{
+
+}
+.btn{
+  float: left;
+  width: 50px;
+  margin: 5px 5px 0 5px;
+  border: 1px solid black;
+  border-radius: 25px
+}
+.zero{
+  float: left;
+  width: 115px;
+  margin-top: 5px;
+  margin-left:5px;
+  border: 1px solid black;
+  border-radius: 15px
+}
+.row{
+  height:46px;width:240px
+}
+.outputArea{
+  width:240px;
+  border-bottom:1px solid black;
+  height:50px;
+  text-align: right
+}

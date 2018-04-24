@@ -1,0 +1,27 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#00FF00",
+    "navigationBarTitleText": "计算器",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "个人",
+        "iconPath": "pages/index/assets/img/head.png",
+        "selectedIconPath": "pages/index/assets/img/downHead.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "计算器",
+        "iconPath": "pages/index/assets/img/head.png",
+        "selectedIconPath": "pages/index/assets/img/downHead.png"
+      }]
+  }
+}

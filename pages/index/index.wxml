@@ -1,0 +1,41 @@
+<!--index.wxml-->
+<view class="container">
+
+  <view class='calc'>
+    <textarea class="outputArea">{{opSymbol}}{{output}}</textarea>
+    <view class='row'>
+      <button class='btn' bindtap='clearOutPut'>AC</button>
+      <button class='btn' bindtap='btnChangeSymbole'>+/-</button>
+      <button class='btn' data-hi="%" bindtap='btnSym'>%</button>
+      <button class='btn' data-hi="÷" bindtap='btnSym'>÷</button>
+    </view>
+
+    <view class='row'>
+      <button class='btn' data-hi="1" bindtap='btnNum'>1</button>
+      <button class='btn' data-hi="2" bindtap='btnNum'>2</button>
+      <button class='btn' data-hi="3" bindtap='btnNum'>3</button>
+      <button class='btn' data-hi="×" bindtap='btnSym'>×</button>
+    </view>
+        
+    <view class='row'>
+      <button class='btn' data-hi="4" bindtap='btnNum'>4</button>
+      <button class='btn' data-hi="5" bindtap='btnNum'>5</button>
+      <button class='btn' data-hi="6" bindtap='btnNum'>6</button>
+      <button class='btn' data-hi="-" bindtap='btnSym'>-</button>
+    </view>
+      
+    <view class='row'>
+      <button class='btn' data-hi="7" bindtap='btnNum'>7</button>
+      <button class='btn' data-hi="8" bindtap='btnNum'>8</button>
+      <button class='btn' data-hi="9" bindtap='btnNum'>9</button>
+      <button class='btn' data-hi="+" bindtap='btnSym'>+</button>
+    </view>
+
+    <view class='row'>
+      <button class='zero' data-hi="0" bindtap='btnNum'>0</button>
+      <button class='btn'  data-hi="." bindtap='btnSym'>.</button>
+      <button class='btn'  data-hi="=" bindtap='btncalc'>=</button>
+    </view>
+  </view>
+</view>
+
