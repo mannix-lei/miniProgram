@@ -33,7 +33,7 @@
 
     <view class='row'>
       <button class='zero' data-hi="0" bindtap='btnNum'>0</button>
-      <button class='btn'  data-hi="." bindtap='btnSym'>.</button>
+      <button class='btn'  data-hi="." bindtap='btnDot'>.</button>
       <button class='btn'  data-hi="=" bindtap='btncalc'>=</button>
     </view>
   </view>

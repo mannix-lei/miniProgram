@@ -49,6 +49,8 @@ Page({
   },
   //清除输出区域
   clearOutPut:function(){
+    this.data.num1 = 0
+    this.data.num2 = 0
     this.data.output = 0
     this.data.opSymbol = ''
     this.setData({
@@ -60,28 +62,40 @@ Page({
   btnNum(event){
     let output = event.target.dataset.hi
     if (this.data.opSymbol == ''){
-      this.data.output = this.data.output + '' + output
-      this.setData({
-        output: this.data.output.replace(/\b(0+)/gi, ""),
-        num1: this.data.output
-      })
+      if (this.data.num1 == 0 && output == 0) {
+        this.data.output = this.data.output + '' + output
+        this.setData({
+          output: this.data.output,
+          num1: this.data.output
+        })
+      }else{
+        this.data.output = this.data.output + '' + output
+        this.setData({
+          output: this.data.output.replace(/\b(0+)/gi, ""),
+          num1: this.data.output
+        })
+      }
     }else{
-      this.data.output = this.data.output + '' + output
-      this.setData({
-        output: this.data.output.replace(/\b(0+)/gi, ""),
-        num2: this.data.output
-      })
+       if (this.data.num2 == 0 && output == 0) {
+          this.data.output = this.data.output + '' + output
+          this.setData({
+            output: this.data.output,
+            num2: this.data.output
+          })
+       }else{
+         this.data.output = this.data.output + '' + output
+         this.setData({
+           output: this.data.output.replace(/\b(0+)/gi, ""),
+           num2: this.data.output
+         })
+       }
     }
-    
-    
-    
-    console.info(this.data.num1)
-    
   },
   //符号按键
   btnSym(event){
     console.info(event.target.dataset.hi)
     this.data.opSymbol = event.target.dataset.hi
+    this.data.output = ''
   },
   //正负号
   btnChangeSymbole(){
@@ -99,19 +113,38 @@ Page({
   btncalc(){
     if (this.data.opSymbol == "+") {
       this.setData({
-        output: parseInt(this.data.num1) + parseInt(this.data.num2)
+        output: parseFloat(this.data.num1) + parseFloat(this.data.num2)
       })
     } else if (this.data.opSymbol == "-") {
       this.setData({
-        output: parseInt(this.data.num1) - parseInt(this.data.num2)
+        output: parseFloat(this.data.num1) - parseFloat(this.data.num2)
       })
     } else if (this.data.opSymbol == "×") {
       this.setData({
-        output: parseInt(this.data.num1) * parseInt(this.data.num2)
+        output: parseFloat(this.data.num1) * parseFloat(this.data.num2)
       })
     } else if (this.data.opSymbol == "÷") {
       this.setData({
-        output: parseInt(this.data.num1) / parseInt(this.data.num2)
+        output: parseFloat(this.data.num1) / parseFloat(this.data.num2)
+      })
+    }
+  },
+
+  //小数点
+  btnDot(event) {
+    let output = event.target.dataset.hi
+    console.info(this.data.num1)
+    if (this.data.opSymbol == ''){ 
+      this.data.output = this.data.output + output
+      this.setData({
+        output: this.data.output.replace(/\b(0+)/gi, ""),
+        num1: this.data.output
+      })
+    }else{
+      this.data.output = this.data.output + output
+      this.setData({
+        output: this.data.output.replace(/\b(0+)/gi, ""),
+        num2: this.data.output
       })
     }
   }
